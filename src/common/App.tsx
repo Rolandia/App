@@ -1,7 +1,10 @@
 import { PaletteMode, ThemeProvider } from "@mui/material";
 import React, { useState } from "react";
+
+import modules from "../modules";
 import theme from "../themes";
 import { ThemeHelper } from "../themes/theme-helper";
+import { AppRouter } from "./AppRouter";
 
 function App() {
   const [themeMode, setTheme] = useState<PaletteMode>(
@@ -14,7 +17,11 @@ function App() {
     );
   };
 
-  return <ThemeProvider theme={theme[themeMode]}>Testes</ThemeProvider>;
+  return (
+    <ThemeProvider theme={theme[themeMode]}>
+      <AppRouter modules={modules} />
+    </ThemeProvider>
+  );
 }
 
 export default App;
