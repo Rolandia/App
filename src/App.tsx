@@ -1,24 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import ClassesPlayground from "./modules/inheritance/pages/classes-playground";
 
 function App() {
+  const H1_STYLES = {
+    fontSize: 56,
+    textTransform: "uppercase" as any,
+    letterSpacing: 6,
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 style={H1_STYLES}>Playground</h1>
+      <div
+        style={{
+          padding: 20,
+          border: "dashed orange 2px",
+          minHeight: "50vh",
+          width: "100%",
+        }}
+      >
+        <ClassesPlayground />
+      </div>
     </div>
   );
 }
